@@ -14,6 +14,11 @@
     <script>
         const socket = io();
         socket.emit('message', "Hola desde el cliente" )
+
+        socket.on('message', msg=> {
+            console.log("message", msg);
+        })
+
     </script>
 </body>
 </html>
