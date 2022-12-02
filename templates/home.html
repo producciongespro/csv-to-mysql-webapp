@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+      crossorigin="anonymous"
+    />
+
+    <title>Convertidor CSV a MySql</title>
+  </head>
+  <body>
+    <div class="row">
+      <header>
+        <h1>Convertidor de CSV a MySql</h1>
+      </header>
+    </div>
+
+    <main>
+      <div class="container">
+        <div class="row">
+          <div class="col-6">
+            <form
+              action="http://localhost:5000/conversor"
+              method="POST"
+              enctype="multipart/form-data"
+            >
+              <div class="input-group">
+                <input
+                  type="file"
+                  class="form-control"
+                  id="file"
+                  name="file"
+                  aria-describedby="inputGroupFileAddon04"
+                  aria-label="Upload"
+                />
+                <input
+                  class="btn btn-outline-secondary"
+                  type="submit"
+                  id="btnFile"
+                  value="Enviar"
+                >
+                  
+                </input>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-12">
+            <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                Accusantium iste temporibus cupiditate nulla earum voluptates velit
+                fuga fugit quis, nostrum repellat rerum itaque quidem blanditiis in.
+                Officiis asperiores accusamus quae! Lorem ipsum, dolor sit amet
+                consectetur adipisicing elit. 
+            </p>              
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <style>
+      @import url(https://fonts.googleapis.com/css?family=Roboto:400,700);
+
+      :root {
+        /* Base font size */
+        font-size: 10px;
+
+        /* Heading height variable*/
+        --heading-height: 30em;
+      }
+
+      body {
+        font-family: "Roboto", Arial, sans-serif;
+        min-height: 100vh;
+        background-color: #101010;
+      }
+
+      header {
+        position: fixed;
+        width: 100%;
+        height: var(--heading-height);
+      }
+
+      /* Create angled background with 'before' pseudo-element */
+      header::before {
+        content: "";
+        display: block;
+        position: absolute;
+        left: 0;
+        bottom: 6em;
+        width: 100%;
+        height: calc(var(--heading-height) + 10em);
+        z-index: -1;
+        transform: skewY(-3.5deg);
+        background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+          url(https://images.unsplash.com/photo-1495464101292-552d0b52fe41?auto=format&fit=crop&w=1350&q=80)
+            no-repeat center,
+          linear-gradient(#4e4376, #2b5876);
+        background-size: cover;
+        border-bottom: 0.2em solid #fff;
+      }
+
+      h1 {
+        font-size: calc(2.8em + 2.6vw);
+        font-weight: 700;
+        letter-spacing: 0.01em;
+        padding: 10rem 0 0 4.5rem;
+        text-shadow: 0.022em 0.022em 0.022em #111;
+        color: #fff;
+      }
+
+      main {
+        padding: calc(var(--heading-height) + 1.5vw) 4em 0;
+      }
+
+      p {
+        font-size: calc(2em + 0.25vw);
+        font-weight: 400;
+        line-height: 2;
+        margin-bottom: 1.5em;
+        color: #fcfcfc;
+      }
+    </style>
+  </body>
+</html>
