@@ -24,7 +24,8 @@ def receive_file():
         return render_template(  "not-valid.html" )
     else:                   
         res = upload_file ( file, app.config['UPLOAD_FOLDER'] ) 
-        print (res)          
+        print (res)
+        read_csv(file.filename)         
         return render_template(  "finish.html" )
 
 

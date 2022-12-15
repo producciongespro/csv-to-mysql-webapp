@@ -14,24 +14,20 @@ def allowed_file(file):
     return False
 
 
-def upload_file (file, folder ):  
-    print (file)
-    filename = secure_filename(file.filename)     
-    print ("filename", filename)
+def upload_file (file, folder ):      
+    filename = secure_filename(file.filename)         
     if file and  allowed_file(filename):        
         file.save(os.path.join( folder, filename ))
         return os.path.join( folder, filename )
     return False
 
-def read_file (request, file ):
-    records = []
-    for line in file:
-        string = str(line)
-        record = string.split("'")        
-        record = record[1]
-        campo1 = record.split(";")[1]
-        records.append(campo1)
-    return records
+def read_csv (name):
+    print("name", name)
+    with open('static/uploads/'+name, newline='') as csvfile:
+        spamreader = csv.reader(csvfile, delimiter=';', quotechar='|')
+        for row in spamreader:
+            #print('->'.join(row))
+            print(row[3]  )
 
 
 
