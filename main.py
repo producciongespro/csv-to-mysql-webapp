@@ -1,8 +1,9 @@
 
 import os
 from dotenv import load_dotenv
-from src.controller import *
+from controller import *
 from flask import Flask, render_template, request
+from config import *
 
 load_dotenv()
 app = Flask(__name__)
@@ -25,7 +26,8 @@ def receive_file():
     else:                   
         res = upload_file ( file, app.config['UPLOAD_FOLDER'] ) 
         print (res)
-        read_csv(file.filename)         
+        registros = read_csv(file.filename)
+        insertarRegistrosSinCat(con, qry, registros )
         return render_template(  "finish.html" )
 
 
