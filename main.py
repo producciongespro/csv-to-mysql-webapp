@@ -26,8 +26,8 @@ def receive_file():
     else:                   
         res = upload_file ( file, app.config['UPLOAD_FOLDER'] ) 
         print (res)
-        registros = read_csv(file.filename)
-        insertarRegistrosSinCat(con, qry, registros )
+        registros = read_csv(file.filename)        
+        insertar_registros_IDP (con, qry, registros )
         return render_template(  "finish.html" )
 
 

@@ -1,10 +1,10 @@
 import mysql.connector
 
-nombreCSV = "info-subcateg-pruebas.csv"
 idCategoria = 1
 separador=';'
-db = "calendar_calendario2023"
+db = "idpmep_calendario2023"
 tabla = "eventos"
+usuario = "luis.chacon.campos@mep.go.cr"
 
 
 con = mysql.connector.connect(
@@ -14,8 +14,11 @@ con = mysql.connector.connect(
     database= db
     )
 
+#Tabla idp
+qry = "INSERT INTO " +  tabla + " (fecha, idModalidad,  idEstrategia, rango, titulo, descripcion, contacto, link, usuario ) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s )"
+
 #tABLA SIN CATEGORIAS (EVENTOS)
-qry = "INSERT INTO " +  tabla + " (fecha, rango, descripcion, link ) VALUES (%s, %s, %s, %s)"
+#qry = "INSERT INTO " +  tabla + " (fecha, rango, descripcion, link ) VALUES (%s, %s, %s, %s)"
 
 #tABLA CON CATEGORIA (OTRAS_FECHAS)
 #qry = "INSERT INTO " +  tabla + " (fecha, rango, descripcion, idCategoria, link ) VALUES (%s, %s, %s, %s, %s)"
