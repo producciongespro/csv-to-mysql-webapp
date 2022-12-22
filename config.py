@@ -15,7 +15,7 @@ con = mysql.connector.connect(
     )
 
 #Tabla idp
-qry = "INSERT INTO " +  tabla + " (fecha, idModalidad,  idEstrategia, rango, titulo, descripcion, contacto, link, usuario ) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s )"
+qry = "INSERT INTO " +  tabla + " (fecha, idActividad,  idEstrategia, rango, titulo, descripcion, contacto, link, usuario ) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s )"
 
 #tABLA SIN CATEGORIAS (EVENTOS)
 #qry = "INSERT INTO " +  tabla + " (fecha, rango, descripcion, link ) VALUES (%s, %s, %s, %s)"

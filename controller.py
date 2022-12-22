@@ -25,13 +25,13 @@ def upload_file (file, folder ):
 def read_csv (name):
     separador=';'
     registros = []
-    with open('static/uploads/'+name, newline='', mode='r' ) as csvfile:
+    #with open('static/uploads/'+name, newline='', mode='r', encoding='utf-8'  ) as csvfile:
+    with open('static/uploads/'+name, newline='', mode='r'  ) as csvfile:
         csvFile = csv.reader(csvfile, delimiter=separador, quotechar=' ') 
         i=0       
         for row in csvFile:
             i+=1
-            #print(i, "->",  row)
-            #print(row[0])
+            #print(i, "->",  row)            
             registros.append(row)
         return registros
 
@@ -40,7 +40,7 @@ def insertarRegistrosSinCat (con, qry, registros ):
     i=0   
     for item in registros:       
         i+=1
-        print ( i, "---", item ) 
+        print ("Item a insertar >>>",  i, "---", item ) 
         fecha = item[0]
         array = fecha.split("/")
         #Formato CSV MES/DIA/AÑO
@@ -58,11 +58,12 @@ def insertar_registros_IDP (con, qry, registros ):
     i=0   
     for item in registros:       
         i+=1
-        print ( i, "---", item )         
+        #msj = "Item a insertar >>>" +  i + " FECHA> " +  item[0] + " idModalidad> " +  item[1] + " idEstrategia> " +  item[2] +  " RANGO> " +  item[3] + " TITULO> " +  item[4] +  " DESCRIPCION> " +  item[5] +  " CONTACTO> " +  item[6] +  " LINK> " +  item[7] 
+        print ( "Registro", i, "***", item[4], "***"  )        
         val = ( item[0], item[1], item[2], item[3], item[4], item[5], item[6], item[7], usuario )        
         cur.execute(qry, val)
     con.commit()
-    print("🚀🚀🚀 Registros insertados EN TABLA SIN CATEGORÍA 🚀🚀🚀")
+    print("🚀🚀🚀 Registros insertados EN TABLA EVENTOS IDP 🚀🚀🚀")
 
 
 
